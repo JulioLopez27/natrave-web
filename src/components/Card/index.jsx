@@ -14,6 +14,7 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
 
     const formik = useFormik({
         onSubmit: (values) => {
+            console.log("🚀 ~ file: index.jsx ~ line 17 ~ Card ~ values", values)
             axios({
                 method: 'post',
                 baseURL:import.meta.env.VITE_API_URL,
@@ -47,6 +48,7 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
                     className='bg-red-300/[0.2] w-14 h-14  text-red-700 text-xl text-center rounded-xl'
                     type="number"
                     min={0}
+                    max={30}
                     name="homeTeamScore"
                     value={formik.values.homeTeamScore}
                     onChange={formik.handleChange}
@@ -60,6 +62,7 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
                     className='bg-red-300/[0.2] w-14 h-14  text-red-700 text-xl text-center rounded-xl'
                     type="number"
                     min={0}
+                    max={30}
                     name="awayTeamScore"
                     value={formik.values.awayTeamScore}
                     onChange={formik.handleChange}
