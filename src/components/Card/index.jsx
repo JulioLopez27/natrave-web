@@ -14,7 +14,6 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
 
     const formik = useFormik({
         onSubmit: (values) => {
-            console.log("🚀 ~ file: index.jsx ~ line 17 ~ Card ~ values", values)
             axios({
                 method: 'post',
                 baseURL:import.meta.env.VITE_API_URL,
@@ -73,11 +72,7 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
                 <img src={`/assets/flags/${awayTeam}.png`} />
                 <span className='uppercase'>{awayTeam}</span>
 
-
             </form>
-
-
         </div>
     )
-
 }
