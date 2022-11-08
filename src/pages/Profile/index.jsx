@@ -3,7 +3,7 @@ import { useLocalStorage, useAsyncFn } from 'react-use'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { format, formatISO } from 'date-fns'
-import { Icon, Card, DateSelect } from '~/components'
+import { Icon, Card, DateSelect,Text } from '~/components'
 
 
 export const Profile = () => {
@@ -53,6 +53,7 @@ export const Profile = () => {
     const isLoading = games.loading || loading
     const hasErrors = games.error || error
     const isDone = !isLoading && !hasErrors
+    const arrVacio = (arr) => !Array.isArray(arr) || arr.length === 0
 
     useEffect(() => {
         fetchHunches()
@@ -99,10 +100,9 @@ export const Profile = () => {
                     <DateSelect currentDate={currentDate} onChange={setDate} />
 
                     <div className='space-y-4'>
-                        {isLoading && 'Loading games...'}
-                        {hasErrors && 'Ops! something went bad :('}
-
-                        {isDone && games.value?.map(game => (
+                        {isLoading && <Text text={'Loading...'} />}
+                        {hasErrors && <Text text={'Ops! Something went wrong :('} />}
+                        {isDone && arrVacio(games.value) && <Text text={"No matches for this date"} /> || games.value?.map(game => (
                             <Card
                                 key={game.id}
                                 gameId={game.id}
