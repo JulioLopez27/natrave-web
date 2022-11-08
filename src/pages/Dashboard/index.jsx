@@ -3,7 +3,7 @@ import { useLocalStorage, useAsyncFn } from 'react-use'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import { format, formatISO } from 'date-fns'
-import { Icon, Card, DateSelect } from '~/components'
+import { Icon, Card, DateSelect,Text } from '~/components'
 
 export const Dashboard = () => {
     const [currentDate, setDate] = useState(formatISO(new Date(2022, 10, 20)))
@@ -40,6 +40,7 @@ export const Dashboard = () => {
     const isLoading = games.loading || loading
     const hasErrors = games.error || error
     const isDone = !isLoading && !hasErrors
+    const arrVacio = (arr) => !Array.isArray(arr) || arr.length === 0
 
     useEffect(() => {
         fetchHunches()
@@ -81,18 +82,17 @@ export const Dashboard = () => {
                     <DateSelect currentDate={currentDate} onChange={setDate} />
 
                     <div className='space-y-4'>
-                        {isLoading && 'Loading games...'}
-                        {hasErrors && 'Ops! something went bad :('}
-
-                        {isDone && games.value?.map(game => (
+                        {isLoading && <Text text={'Loading...'}/>}
+                        {hasErrors && <Text text={'Ops! Something went wrong :('}/>}
+                        {isDone && arrVacio(games.value) && <Text text={"No matches for this date"}/> || games.value?.map(game => (
                             <Card
                                 key={game.id}
                                 gameId={game.id}
                                 homeTeam={game.homeTeam}
                                 awayTeam={game.awayTeam}
                                 gameTime={format(new Date(game.gameTime), 'H:mm')}
-                                homeTeamScore={user?.hunches?.[game.id]?.homeTeamScore }
-                                awayTeamScore={user?.hunches?.[game.id]?.awayTeamScore }
+                                homeTeamScore={user?.hunches?.[game.id]?.homeTeamScore}
+                                awayTeamScore={user?.hunches?.[game.id]?.awayTeamScore}
                             />
                         ))}
                     </div>
