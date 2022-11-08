@@ -3,7 +3,7 @@ import { useLocalStorage, useAsyncFn } from 'react-use'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { format, formatISO } from 'date-fns'
-import { Icon, Card, DateSelect,Text } from '~/components'
+import { Icon, Card, DateSelect, Text } from '~/components'
 
 
 export const Profile = () => {
@@ -53,7 +53,6 @@ export const Profile = () => {
     const isLoading = games.loading || loading
     const hasErrors = games.error || error
     const isDone = !isLoading && !hasErrors
-    const arrVacio = (arr) => !Array.isArray(arr) || arr.length === 0
 
     useEffect(() => {
         fetchHunches()
@@ -64,6 +63,25 @@ export const Profile = () => {
         fetchGames({ gameTime: currentDate })
     }, [currentDate])
 
+
+    
+    const arrEmpty = (arr) => !Array.isArray(arr) || arr.length === 0
+    const haveGames = (param) => {
+        if (!arrEmpty(param.value)) {
+            const ret = param.value?.map(game => (
+                <Card
+                    key={game.id}
+                    gameId={game.id}
+                    homeTeam={game.homeTeam}
+                    awayTeam={game.awayTeam}
+                    gameTime={format(new Date(game.gameTime), 'H:mm')}
+                    homeTeamScore={user?.hunches?.[game.id]?.homeTeamScore}
+                    awayTeamScore={user?.hunches?.[game.id]?.awayTeamScore}
+                />
+            ))
+            return ret
+        } else { return <Text text={"no matches for the day"} /> }
+    }
 
     return (
         <>
@@ -102,18 +120,7 @@ export const Profile = () => {
                     <div className='space-y-4'>
                         {isLoading && <Text text={'Loading...'} />}
                         {hasErrors && <Text text={'Ops! Something went wrong :('} />}
-                        {isDone && arrVacio(games.value) && <Text text={"No matches for this date"} /> || games.value?.map(game => (
-                            <Card
-                                key={game.id}
-                                gameId={game.id}
-                                homeTeam={game.homeTeam}
-                                awayTeam={game.awayTeam}
-                                gameTime={format(new Date(game.gameTime), 'H:mm')}
-                                homeTeamScore={user?.hunches?.[game.id]?.homeTeamScore}
-                                awayTeamScore={user?.hunches?.[game.id]?.awayTeamScore}
-                                disabled={true}
-                            />
-                        ))}
+                        {isDone && haveGames(games)}
                     </div>
                 </section>
             </main>
