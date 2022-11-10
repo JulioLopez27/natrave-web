@@ -3,7 +3,10 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { useLocalStorage } from 'react-use'
 import { Navigate } from 'react-router-dom'
-import { Icon, Input } from '~/components'
+import { Icon, Input,errorLogin } from '~/components'
+
+
+
 
 
 const validationSchema = yup.object().shape({
@@ -17,17 +20,22 @@ export const Login = () => {
 
     const formik = useFormik({
         onSubmit: async (values) => {
-            const res = await axios({
-                method: 'get',
-                baseURL: import.meta.env.VITE_API_URL,
-                url: '/login',
-                auth: {
-                    username: values.email,
-                    password: values.password
-                }
-            })
-            // guarda info en el explorador
-            setAuth(res.data)
+            try {
+                const res = await axios({
+                    method: 'get',
+                    baseURL: import.meta.env.VITE_API_URL,
+                    url: '/login',
+                    auth: {
+                        username: values.email,
+                        password: values.password
+                    }
+                })
+                setAuth(res.data)
+            } catch (error) {
+
+                errorLogin()
+            }
+
         },
 
         initialValues: {
