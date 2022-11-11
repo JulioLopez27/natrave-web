@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { useLocalStorage } from 'react-use'
 import { Navigate } from 'react-router-dom'
-import { Icon, Input, errorEmailLogin,errorPassLogin } from '~/components'
+import { Icon, Input, errorEmailLogin,errorPassLogin,fails } from '~/components'
 
 
 
@@ -36,7 +36,7 @@ export const Login = () => {
                     errorEmailLogin()
                 }else if(error.response.status === 406){
                     errorPassLogin()
-                }
+                }else{fails}
             }
 
         },
