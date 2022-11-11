@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { useLocalStorage } from 'react-use'
 import { Navigate } from 'react-router-dom'
-import { Icon, Input,errorLogin } from '~/components'
+import { Icon, Input, errorEmailLogin,errorPassLogin } from '~/components'
 
 
 
@@ -32,8 +32,11 @@ export const Login = () => {
                 })
                 setAuth(res.data)
             } catch (error) {
-
-                errorLogin()
+                if (error.response.status === 404) {
+                    errorEmailLogin()
+                }else if(error.response.status === 406){
+                    errorPassLogin()
+                }
             }
 
         },
