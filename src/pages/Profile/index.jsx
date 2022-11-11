@@ -89,9 +89,9 @@ export const Profile = () => {
                 <div className="container max-w-3xl  flex justify-between p-4">
 
                     <img src="/assets/logo/logo-fundo-vermelho.svg" className="w-28 md:w-40" />
-                    {auth?.user?.id && (<div onClick={logout} className="p-2 cursor-pointer">
+                    {auth?.user?.id && (<div onClick={logout} className="p-2 cursor-pointer text-xl font-semibold hover:text-black ">
                         Sair
-                    </div>) || (<div onClick={login} className="p-2 cursor-pointer text-lg hover:text-red-700 hover:font-bold hover:text-xl">
+                    </div>) || (<div onClick={login} className="p-2 cursor-pointer text-xl font-semibold hover:text-zinc-400 hover:font-bold">
                         Login
                     </div>)}
 
@@ -107,7 +107,7 @@ export const Profile = () => {
                             <Icon name="arrowLeft" className='w-8  ' />
                         </a>)}
 
-                        <h3 className='text-2xl font-bold'>{user?.name}</h3>
+                        <h3 className='text-xl font-bold'>{user?.name}</h3>
                     </div>
                 </section>
 
