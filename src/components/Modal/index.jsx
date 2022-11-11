@@ -73,7 +73,6 @@ export const errorEmail = () => {
 export const fails = () => {
     return(
             swal({
-                icon: "sucess",
                 content: (
                     <div >
                         <h1 className='text-xl'>🚀Houston, we got a problem here🚀</h1>
@@ -81,7 +80,7 @@ export const fails = () => {
                     </div>
                 ),
                 buttons: false,
-                timer: 3000,
+                timer: 3500,
             })
     )
 }
