@@ -12,6 +12,7 @@ import { Login } from './Login'
 import { Signup } from './Signup'
 import { Dashboard } from './Dashboard'
 import { Profile } from './Profile'
+import { Users } from './Users'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,9 @@ const router = createBrowserRouter([
   }, {
     path: "/:username",
     element: <Profile />,
+  },{
+    path: "/users",
+    element: <Users />,
   },
 ]);
 
