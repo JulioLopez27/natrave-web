@@ -29,12 +29,13 @@ export const Signup = () => {
                 })
                 setAuth(res.data)
             } catch (error) {
-                console.log(error);
                 if (error.response.status === 303) {
                     errorUsername()
                 }else if(error.response.status === 302){
                     errorEmail()
-                }else{fails}
+                }else{
+                    fails()
+                }
             }
         },
         initialValues: {
