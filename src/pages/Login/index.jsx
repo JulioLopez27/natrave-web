@@ -11,7 +11,7 @@ import { Icon, Input, errorEmailLogin,errorPassLogin } from '~/components'
 
 const validationSchema = yup.object().shape({
     email: yup.string().email("Escreva um email valido").required("Preencha o seu e-mail"),
-    password: yup.string().required("Digite sua senha ")
+    password: yup.string().required("Digite sua senha ").min(6, 'At least 6 charater').trim()
 })
 
 export const Login = () => {
