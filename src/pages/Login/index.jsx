@@ -36,7 +36,7 @@ export const Login = () => {
                     errorEmailLogin()
                 }else if(error.response.status === 406){
                     errorPassLogin()
-                }else{fails}
+                }else{fails()}
             }
 
         },
