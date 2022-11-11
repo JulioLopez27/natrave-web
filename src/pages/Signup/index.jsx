@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import { useLocalStorage } from 'react-use'
 
-import { Icon, Input } from '~/components'
+import { Icon, Input, errorEmail, errorUsername,fails } from '~/components'
 
 
 
@@ -12,7 +12,7 @@ const validationSchema = yup.object().shape({
     name: yup.string().required('Preencha o seu nome'),
     username: yup.string().required('Preencha o seu nome de usuario'),
     email: yup.string().email('Informe um email válido').required('Informe seu e-mail'),
-    password: yup.string().required('Digite uma senha'),
+    password: yup.string().required('Digite uma senha').min(6, 'At least 6 charater').trim(),
 })
 
 export const Signup = () => {
@@ -20,15 +20,22 @@ export const Signup = () => {
     const formik = useFormik({
 
         onSubmit: async (values) => {
-            const res = await axios({
-                method: 'post',
-                baseURL: import.meta.env.VITE_API_URL,
-                url: '/signup',
-                data: values
-            })
-
-            setAuth(res.data)
-
+            try {
+                const res = await axios({
+                    method: 'post',
+                    baseURL: import.meta.env.VITE_API_URL,
+                    url: '/signup',
+                    data: values
+                })
+                setAuth(res.data)
+            } catch (error) {
+                console.log(error);
+                if (error.response.status === 303) {
+                    errorUsername()
+                }else if(error.response.status === 302){
+                    errorEmail()
+                }else{fails}
+            }
         },
         initialValues: {
             name: '',
