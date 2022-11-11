@@ -14,7 +14,7 @@ export const errorEmailLogin = () => {
                 </div>
             ),
             buttons: false,
-            timer: 2000,
+            timer: 1500,
         })
     )
 }
@@ -30,7 +30,7 @@ export const errorPassLogin = () => {
                 </div>
             ),
             buttons: false,
-            timer: 2000,
+            timer: 1500,
         })
     )
 }
@@ -49,7 +49,7 @@ export const errorUsername= () => {
                 </div>
             ),
             buttons: false,
-            timer: 2700,
+            timer: 1500,
         })
     )
 }
@@ -64,7 +64,7 @@ export const errorEmail = () => {
                 </div>
             ),
             buttons: false,
-            timer: 2700,
+            timer: 1500,
         })
     )
 }
