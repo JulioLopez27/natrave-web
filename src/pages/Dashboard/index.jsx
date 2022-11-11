@@ -81,7 +81,7 @@ export const Dashboard = () => {
 
                     <img src="/assets/logo/logo-fundo-vermelho.svg" className="w-28 md:w-40" />
                     <a href={`/${auth?.user?.username}`}>
-                        <Icon name="profile" className="w-7" />
+                        <Icon name="profile" className="w-9" />
                     </a>
 
                 </div>
