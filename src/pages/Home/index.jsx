@@ -26,7 +26,7 @@ export function Home() {
         <div className="md:flex-1 flex flex-col space-y-6">
           <h1 className="text-2xl text-center font-bold md:text-3xl md:text-left">Dê o seu palpite na Copa do Mundo do Catar 2022! </h1>
 
-          <a href="/signup" className="text-center text-red-700 bg-white hover:bg-red-300 hover:text-white text-xl px-8 py-4 rounded-xl ">
+          <a href="/signup" className="text-center text-red-700 bg-white hover:bg-red-300  hover:text-white text-xl px-8 py-4 rounded-xl ">
             Criar minha conta
           </a>
 
