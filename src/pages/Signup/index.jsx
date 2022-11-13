@@ -9,10 +9,10 @@ import { Icon, Input, errorEmail, errorUsername,fails } from '~/components'
 
 
 const validationSchema = yup.object().shape({
-    name: yup.string().required('Preencha o seu nome'),
-    username: yup.string().required('Preencha o seu nome de usuario'),
-    email: yup.string().email('Informe um email válido').required('Informe seu e-mail'),
-    password: yup.string().required('Digite uma senha').min(6, 'At least 6 charater').trim(),
+    name: yup.string().required('Fill with your name'),
+    username: yup.string().required('Fill with your username'),
+    email: yup.string().email('Write a valid email').required('Fill your email'),
+    password: yup.string().required('Write a password').min(6, 'At least 6 charater').trim(),
 })
 
 export const Signup = () => {
@@ -73,8 +73,8 @@ export const Signup = () => {
                         autoComplete="off"
                         type="text"
                         name="name"
-                        label="Seu nome"
-                        placeholder="Digite seu nome"
+                        label="Your name"
+                        placeholder="Write your name"
                         error={formik.touched.name && formik.errors.name}
                         value={formik.values.name}
                         onChange={formik.handleChange}
@@ -84,8 +84,8 @@ export const Signup = () => {
                         autoComplete="off"
                         type="text"
                         name="username"
-                        label="Seu nome de usuário"
-                        placeholder="Digite um nome de usuário"
+                        label="Your username"
+                        placeholder="Write a username"
                         error={formik.touched.username && formik.errors.username}
                         value={formik.values.username}
                         onChange={formik.handleChange}
@@ -96,8 +96,8 @@ export const Signup = () => {
                         autoComplete="off"
                         type="text"
                         name="email"
-                        label="Seu e-mail"
-                        placeholder="Digite seu e-mail"
+                        label="Your e-mail"
+                        placeholder="Write your e-mail"
                         error={formik.touched.email && formik.errors.email}
                         value={formik.values.email}
                         onChange={formik.handleChange}
@@ -107,8 +107,8 @@ export const Signup = () => {
                     <Input
                         type="password"
                         name="password"
-                        label="Sua senha"
-                        placeholder="Digite sua senha"
+                        label="Your password"
+                        placeholder="Write your password"
                         error={formik.touched.password && formik.errors.password}
                         value={formik.values.password}
                         onChange={formik.handleChange}
@@ -117,7 +117,7 @@ export const Signup = () => {
 
                     <button type='submit' className="block w-full text-center text-white bg-red-500  px-6 py-3 rounded-xl disabled:opacity-50"
                         disabled={!formik.isValid || formik.isSubmitting}>
-                        {formik.isSubmitting ? 'Criando usuario...' : 'Criar minha conta'}
+                        {formik.isSubmitting ? 'Criando usuario...' : 'Sign-up'}
                     </button>
 
                 </form>

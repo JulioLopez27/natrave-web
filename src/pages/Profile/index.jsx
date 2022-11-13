@@ -90,7 +90,7 @@ export const Profile = () => {
 
                     <img src="/assets/logo/logo-fundo-vermelho.svg" className="w-28 md:w-40" />
                     {auth?.user?.id && (<div onClick={logout} className="p-2 cursor-pointer text-xl font-semibold">
-                        Sair
+                        Logout
                     </div>) || (<div onClick={login} className="p-2 cursor-pointer text-xl font-bold ">
                         Login
                     </div>)}

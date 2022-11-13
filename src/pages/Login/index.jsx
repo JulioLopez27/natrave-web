@@ -10,8 +10,8 @@ import { Icon, Input, errorEmailLogin,errorPassLogin,fails } from '~/components'
 
 
 const validationSchema = yup.object().shape({
-    email: yup.string().email("Escreva um email valido").required("Preencha o seu e-mail"),
-    password: yup.string().required("Digite sua senha ").min(6, 'At least 6 charater').trim()
+    email: yup.string().email("Write a valid email").required("Fill your email"),
+    password: yup.string().required("Write your password").min(6, 'At least 6 charater').trim()
 })
 
 export const Login = () => {
@@ -66,15 +66,15 @@ export const Login = () => {
                     <a href="/">
                         <Icon name="back" className="h-6" />
                     </a>
-                    <h2 className="text-xl font-bold">Entre na sua conta</h2>
+                    <h2 className="text-xl font-bold">Login into your account</h2>
                 </div>
 
                 <form className="p-4 space-y-6" onSubmit={formik.handleSubmit}>
                     <Input
                         type="text"
                         name="email"
-                        label="Seu e-mail"
-                        placeholder="Digite seu e-mail"
+                        label="Your e-mail"
+                        placeholder="Type your e-mail"
                         error={formik.touched.email && formik.errors.email}
                         value={formik.values.email}
                         onChange={formik.handleChange}
@@ -83,8 +83,8 @@ export const Login = () => {
                     <Input
                         type="password"
                         name="password"
-                        label="Sua senha"
-                        placeholder="Digite sua senha"
+                        label="Your password"
+                        placeholder="Type your password"
                         error={formik.touched.password && formik.errors.password}
                         value={formik.values.password}
                         onChange={formik.handleChange}
@@ -93,7 +93,7 @@ export const Login = () => {
 
                     <button type='submit' className="block w-full text-center text-white bg-red-500  px-6 py-3 rounded-xl disabled:opacity-50"
                         disabled={!formik.isValid || formik.isSubmitting}>
-                        {formik.isSubmitting ? 'Loading...' : 'Entrar'}
+                        {formik.isSubmitting ? 'Loading...' : 'Login'}
                     </button>
 
                 </form>
