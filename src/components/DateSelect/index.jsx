@@ -1,6 +1,5 @@
 
 import { addDays, subDays,format,formatISO } from 'date-fns'
-import {ptBR} from 'date-fns/locale'
 import {Icon} from '~/components/Icon'
 
 export const DateSelect = ({currentDate, onChange}) => {
@@ -21,7 +20,7 @@ export const DateSelect = ({currentDate, onChange}) => {
 
             <Icon name="miniarrowLeft" className='w-6 text-red-500' onClick={prevDay} />
 
-            <span className='font-bold'>{format(date,"d 'de' MMMM", {locale:ptBR})}</span>
+            <span className='font-bold'>{format(date,"d MMMM", )}</span>
 
             <Icon name="miniarrowRight" className='w-6 text-red-500' onClick={nextDay} />
         </div>)
