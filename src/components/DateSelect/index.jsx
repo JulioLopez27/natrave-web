@@ -20,7 +20,7 @@ export const DateSelect = ({currentDate, onChange}) => {
 
             <Icon name="miniarrowLeft" className='w-6 text-red-500' onClick={prevDay} />
 
-            <span className='font-bold'>{format(date,"d MMMM", )}</span>
+            <span className='font-bold'>{format(date,"MMMM d", )}</span>
 
             <Icon name="miniarrowRight" className='w-6 text-red-500' onClick={nextDay} />
         </div>)
