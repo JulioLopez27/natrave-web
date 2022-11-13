@@ -113,7 +113,7 @@ export const Profile = () => {
 
 
                 <section id="content" className='container max-w-3xl p-4 space-y-4'>
-                    <h2 className='text-xl text-red-500 font-bold'>Seus palpites</h2>
+                    <h2 className='text-xl text-red-500 font-bold'>Your hints</h2>
 
                     <DateSelect currentDate={currentDate} onChange={setDate} />
 
