@@ -77,6 +77,7 @@ export const Profile = () => {
                     gameTime={format(new Date(game.gameTime), 'H:mm')}
                     homeTeamScore={user?.hunches?.[game.id]?.homeTeamScore}
                     awayTeamScore={user?.hunches?.[game.id]?.awayTeamScore}
+                    disabled={true}
                 />
             ))
             return ret
