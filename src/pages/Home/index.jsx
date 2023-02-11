@@ -24,7 +24,7 @@ export function Home() {
         </div>
 
         <div className="md:flex-1 flex flex-col space-y-6">
-          <h1 className="text-2xl text-center font-bold md:text-3xl md:text-left"> Make your hint for World Cup Qatar 2022! </h1>
+          <h1 className="text-2xl text-center font-bold md:text-3xl md:text-left"> Make your hunch for World Cup Qatar 2022! </h1>
 
           <a href="/signup" className="text-center text-red-700 bg-white hover:bg-red-300  hover:text-white text-xl px-8 py-4 rounded-xl ">
            Sign-up
