@@ -92,7 +92,7 @@ export const Dashboard = () => {
 
                     <div className="container max-w-3xl space-y-2 ">
                         <span>Hi {auth?.user?.username}</span>
-                        <h3 className='text-2xl font-bold'>what's your hint?</h3>
+                        <h3 className='text-2xl font-bold'>what's your hunch?</h3>
                     </div>
                 </section>
 
