@@ -4,6 +4,8 @@
 El proyecto es una aplicación web que permite a los usuarios registrarse, iniciar sesión y realizar predicciones sobre los resultados de los partidos del Mundial de Fútbol 2022. Actualmente, el proyecto implementa la primera fase de grupos del torneo. Los usuarios también pueden explorar los perfiles de otros usuarios para verificar sus predicciones.
 
 ## Capturas de Pantalla
+### Homepage
+![Homepage](screenshots/Homepage.PNG)
 ### Login
 ![Login](screenshots/Login.PNG)
 
