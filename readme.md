@@ -4,7 +4,8 @@
 El proyecto es una aplicación web que permite a los usuarios registrarse, iniciar sesión y realizar predicciones sobre los resultados de los partidos del Mundial de Fútbol 2022. Actualmente, el proyecto implementa la primera fase de grupos del torneo. Los usuarios también pueden explorar los perfiles de otros usuarios para verificar sus predicciones.
 
 ## Capturas de Pantalla
-<!-- Agrega aquí algunas capturas de pantalla del proyecto en acción -->
+### Login
+![Login](screenshots/Login.PNG)
 
 ## Características
 - **Creación y Login de Usuarios:** Los usuarios pueden registrarse en la plataforma y luego iniciar sesión con sus credenciales.
@@ -25,7 +26,7 @@ Para clonar y ejecutar este proyecto localmente, sigue estos pasos:
 
 1. Clona este repositorio.
 2. En la raíz del proyecto, instala las dependencias con el comando: npm install
-3. Inicia el servidor de desarrollo con el comando: npm run dev
+3. Inicia el servidor de desarrollo web con el comando: npm run dev
 4. Abre tu navegador web y navega a `http://localhost:3000` para ver la aplicación.
 
 ## Uso
