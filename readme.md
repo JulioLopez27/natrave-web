@@ -8,7 +8,10 @@ El proyecto es una aplicación web que permite a los usuarios registrarse, inici
 ![Homepage](screenshots/Homepage.PNG)
 ### Login
 ![Login](screenshots/Login.PNG)
-
+### Signup
+![Signup](screenshots/Signup.PNG)
+<!-- ### Profile
+![Profiles] -->
 ## Características
 - **Creación y Login de Usuarios:** Los usuarios pueden registrarse en la plataforma y luego iniciar sesión con sus credenciales.
 - **Sistema de Predicciones:** Los usuarios pueden realizar predicciones sobre los resultados de los partidos del Mundial 2022.
