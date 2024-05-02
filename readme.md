@@ -40,6 +40,6 @@ Para utilizar la aplicación, sigue estos pasos:
 El proyecto está actualmente en producción. Puedes acceder a él en [https://fscnatrave.vercel.app](#).
 
 ## Contacto
-Para cualquier pregunta o comentario sobre el proyecto, puedes contactar al  [julioneo95@hotmail.com].
+Para cualquier pregunta o comentario sobre el proyecto, puedes contactar al julioneo95@hotmail.com.
 
 
