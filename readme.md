@@ -37,7 +37,7 @@ Para utilizar la aplicación, sigue estos pasos:
 4. Explora los perfiles de otros usuarios para ver sus predicciones.
 
 ## Producción
-El proyecto está actualmente en producción. Puedes acceder a él en [https://fscnatrave.vercel.app/](#).
+El proyecto está actualmente en producción. Puedes acceder a él en https://fscnatrave.vercel.app/.
 
 ## Contacto
 Para cualquier pregunta o comentario sobre el proyecto, puedes contactar al julioneo95@hotmail.com.
