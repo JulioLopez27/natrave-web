@@ -79,7 +79,7 @@ export const Signup = () => {
                     <a href="/">
                         <Icon name="back" className="h-6" />
                     </a>
-                    <h2 className="text-xl font-bold">Crie sua conta</h2>
+                    <h2 className="text-xl font-bold">Create your account</h2>
                 </div>
                 <section>
                     <form className="p-4 space-y-6" onSubmit={formik.handleSubmit}>
